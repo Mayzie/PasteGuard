@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Title</title>
+
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/normalise.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css') }}">
+	</head>
+
+	<body>
+		<header>
+			<h1 class="left">Online PasteBin</h1>
+
+			<nav class="right">
+				<ul>
+					<a href="#"><li>Submit New Paste</li></a>
+					<a href="#"><li>Paste Index</li></a>
+					{% if session.user_id is defined %}
+						<a href="#"><li>My Profile</li></a>
+						<a href="#"><li>Log out</li></a>
+					{% else %}
+						<a href="#"><li>Log in</li></a>
+						<a href="#"><li>Sign up</li></a>
+					{% endif %}
+				</ul>
+			</nav>
+
+			<form class="right">
+				<input type="submit" style="background-image: url('{{ url_for('static', filename='images/icon_search.svg') }}');" value="" />
+				<input type="search" placeholder="Enter search terms here" />
+			</form>
+		</header>
+
+		<main>
+			{% block main %}{% endblock %}
+			</div>
+			<div class="footer-height"></div>
+		</main>
+
+		<footer>
+			Copyright &copy; 2015 - Powered by FOSS PasteBin
+		</footer>
+	</body>
+</html>

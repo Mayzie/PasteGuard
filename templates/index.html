@@ -1,0 +1,51 @@
+{% extends "common.html" %}
+
+{% block main %}
+			<div id="new-paste-box">
+				<form>
+					<textarea wrap="off"></textarea>
+
+					<div class="options">
+						<ul class="right">
+							<li>Language:
+								<select>
+									<option value="0">Auto-detect</option>
+									<option value="1">Plaintext</option>
+									<option value="2">C</option>
+									<option value="3">C++</option>
+									<option value="4">Delphi</option>
+									<option value="5">Go</option>
+									<option value="6">Pascal</option>
+									<option value="7">Rust</option>
+								</select>
+							</li>
+							<li>
+								<select>
+									<option value="0">No expiry</option>
+									<option value="1">5 minutes</option>
+									<option value="2">15 minutes</option>
+									<option value="3">30 minutes</option>
+									<option value="4">1 hour</option>
+									<option value="5">6 hours</option>
+									<option value="6">1 day</option>
+									<option value="7">1 week</option>
+									<option value="8">1 month</option>
+									<option value="9">6 months</option>
+									<option valur="10">1 year</option>
+								</select>
+							</li>
+
+							<li><input type="submit" value="Paste" /></li>
+						</ul>
+
+						<ul class="left">
+							<li>Publicly list? <input type="checkbox" checked="checked" /></li>
+							<li>Password: <input type="password" /></li>
+						</ul>
+	
+					</div>
+				</form>
+			</div>
+
+			<div id="recent-pastes">
+{% endblock %}
